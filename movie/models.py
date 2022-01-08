@@ -21,3 +21,20 @@ class Movie(models.Model):
     class Meta:
         verbose_name_plural = "Movies"
         ordering = ["-id"]
+        
+class Movie_Shots(models.Model):
+    title = models.CharField('Nomi', max_length=150, blank=True, null=True)
+    desc = models.TextField("Kadr haqida", blank=True, null=True)
+    image = models.ImageField('Kadr', upload_to="movie_shots/")
+    movie = models.ForeignKey(Movie, verbose_name='Film',
+                    on_delete=models.CASCADE,
+                    null=True, blank=True)
+
+
+    def __str__(self):
+        return self.title
+
+
+    class Meta:
+        verbose_name = 'Kadr'
+        verbose_name_plural = 'Kadrlar'
