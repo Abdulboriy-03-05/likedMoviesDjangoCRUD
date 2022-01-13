@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import  Movie, Category, Movie_Shots
+from .models import Movie, Category, Movie_Shots
 from django.utils.html import mark_safe
 
 class MovieShotsInline(admin.TabularInline):
